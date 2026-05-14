@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(ls \"C:\\\\Users\\\\pawel\\\\Code\\\\news-digest-agent\\\\openspec\\\\\" -ErrorAction SilentlyContinue; if \\(-not \\(Test-Path \"C:\\\\Users\\\\pawel\\\\Code\\\\news-digest-agent\\\\openspec\\\\\"\\)\\) { \"No openspec dir\" })",
+      "Bash(openspec instructions *)"
+    ]
+  }
+}
