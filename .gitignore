@@ -23,3 +23,7 @@ failed_digests/
 
 # Azure Functions
 .python_packages/
+
+# Azurite
+__azurite_*.json
+__blobstorage__
