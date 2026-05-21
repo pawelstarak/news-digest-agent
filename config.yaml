@@ -1,0 +1,104 @@
+delivery:
+  time: "06:00"
+  timezone: "Europe/Warsaw"
+
+categories:
+  world_politics:
+    display_name: "World Politics"
+    frequency: daily
+    context_hint: "global politics, international relations, policy decisions, elections, and geopolitical events"
+    feeds:
+      - url: https://feeds.bbci.co.uk/news/world/rss.xml
+        name: BBC World
+      - url: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+        name: NYT World
+      - url: https://feeds.washingtonpost.com/rss/world
+        name: Washington Post World
+
+  science:
+    display_name: "Science"
+    frequency: daily
+    context_hint: "scientific research, discoveries, studies, and advances in physics, biology, medicine, climate science, and technology"
+    feeds:
+      - url: https://www.sciencedaily.com/rss/all.xml
+        name: Science Daily
+      - url: https://feeds.nature.com/nature/rss/current
+        name: Nature
+      - url: https://www.newscientist.com/feed/home/
+        name: New Scientist
+
+  nature:
+    display_name: "Nature & Environment"
+    frequency: daily
+    context_hint: "ecology, wildlife, conservation, climate change, environmental policy, and natural world events"
+    feeds:
+      - url: https://www.theguardian.com/environment/rss
+        name: The Guardian Environment
+      - url: https://insideclimatenews.org/feed/
+        name: Inside Climate News
+      - url: https://e360.yale.edu/feed.xml
+        name: Yale Environment 360
+
+  technology:
+    display_name: "Technology"
+    frequency: daily
+    context_hint: "significant developments in software, hardware, AI, the internet, major tech companies, cybersecurity, and digital society"
+    feeds:
+      - url: https://www.wired.com/feed/rss
+        name: Wired
+      - url: https://arstechnica.com/feed/
+        name: Ars Technica
+      - url: https://feeds.feedburner.com/TheHackersNews
+        name: The Hacker News
+
+  rock_metal:
+    display_name: "Rock & Metal"
+    frequency: weekly
+    day: friday
+    context_hint: "rock and metal music news: album releases, band announcements, tours, and significant industry events in the rock and metal scene"
+    feeds:
+      - url: https://www.loudwire.com/feed/
+        name: Loudwire
+      - url: https://www.kerrang.com/feed
+        name: Kerrang
+      - url: https://www.revolvermag.com/rss.xml
+        name: Revolver
+
+  movies:
+    display_name: "Movies"
+    frequency: weekly
+    day: saturday
+    context_hint: "film news: major releases, box office results, director/actor announcements, festival awards, and significant industry developments"
+    feeds:
+      - url: https://collider.com/feed/
+        name: Collider
+      - url: https://deadline.com/feed/
+        name: Deadline
+      - url: https://variety.com/feed/
+        name: Variety
+
+  gaming:
+    display_name: "Gaming"
+    frequency: weekly
+    day: thursday
+    context_hint: "video game news: major releases, announcements, reviews, studio news, and significant industry events"
+    feeds:
+      - url: https://www.ign.com/articles.rss
+        name: IGN
+      - url: https://kotaku.com/rss
+        name: Kotaku
+      - url: https://www.eurogamer.net/?format=rss
+        name: Eurogamer
+
+  books_literature:
+    display_name: "Books & Literature"
+    frequency: weekly
+    day: sunday
+    context_hint: "book news: notable releases, literary awards, author news, publishing industry developments, and significant reviews"
+    feeds:
+      - url: https://www.theguardian.com/books/rss
+        name: The Guardian Books
+      - url: https://lithub.com/feed/
+        name: Literary Hub
+      - url: https://electricliterature.com/feed/
+        name: Electric Literature

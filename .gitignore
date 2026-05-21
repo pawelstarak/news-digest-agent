@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+htmlcov/
+.coverage
+*.log
+
+# Local secrets
+.env
+local.settings.json
+
+# Failed digest fallback files
+failed_digests/
+
+# Azure Functions
+.python_packages/
