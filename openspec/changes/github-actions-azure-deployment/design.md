@@ -28,13 +28,13 @@ The news-digest-agent is a Python Azure Functions app (v4 programming model) wit
 
 **Alternative considered:** `azure/login` with a service principal + `azure/functions-action`. More flexible for multi-resource pipelines but overkill here; adds an extra secret and Azure AD setup step.
 
-### Remote build disabled — local pip install
+### Remote build via Oryx (SCM build)
 
-**Decision:** Install dependencies locally in the GitHub Actions runner and deploy the full package (not rely on Azure's remote build / Oryx).
+**Decision:** Use Azure's remote build (`scm-do-build-during-deployment: true`) — let Oryx install dependencies on the server side rather than pre-installing locally.
 
-**Rationale:** Remote build (SCM build) is enabled by default for Consumption plan apps but can produce inconsistent results for packages with native extensions (e.g., `trafilatura` pulls `lxml`). Local install on `ubuntu-latest` with the matching Python version gives a predictable artifact.
+**Rationale:** Pre-installing packages locally and then disabling remote build causes the `azure/functions-action@v1` to update Kudu app settings at deploy time, which triggers a Kudu container restart; the immediate zip deploy then hits a 404 because Kudu isn't ready. Using remote build avoids this entirely. The native-extension concern (`trafilatura`/`lxml`) doesn't apply because both the CI runner and Azure's build environment are Linux.
 
-**Alternative considered:** Let Azure do the remote build (`ENABLE_ORYX_BUILD=true`). Simpler workflow but less control over the build environment.
+**Alternative considered:** Local `pip install --target=".python_packages/lib/site-packages"` with `scm-do-build-during-deployment: false`. Rejected because the dynamic app-setting update causes a Kudu restart race condition resulting in a 404 on zip deploy.
 
 ### Python version pinned to 3.13
 
