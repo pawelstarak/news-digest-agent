@@ -30,5 +30,4 @@ jobs:
             --name ${{ secrets.AZURE_FUNCTIONAPP_NAME }} \
             --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
             --src-path deploy.zip \
-            --type zip \
-            --build-remote true
+            --type zip
