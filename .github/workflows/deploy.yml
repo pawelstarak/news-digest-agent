@@ -26,8 +26,7 @@ jobs:
       - name: Deploy
         run: |
           zip -r deploy.zip . -x '.git/*' '.github/*' '__pycache__/*' '.venv/*' 'openspec/*' '__azurite*' 'tests/*' 'failed_digests/*'
-          az functionapp deploy \
+          az functionapp deployment source config-zip \
             --name ${{ secrets.AZURE_FUNCTIONAPP_NAME }} \
             --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-            --src-path deploy.zip \
-            --type zip
+            --src deploy.zip
