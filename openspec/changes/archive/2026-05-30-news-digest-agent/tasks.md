@@ -58,12 +58,4 @@
 
 - [x] 9.1 Create `function_app.py` with a timer trigger using Azure Functions Python v2 SDK; cron expression for 6:00 AM UTC daily
 - [x] 9.2 Create `host.json` and `local.settings.json` (with placeholder values for local dev)
-- [ ] 9.3 Verify local invocation works via Azure Functions Core Tools (`func start` + manual trigger)  ← manual step requiring Azure Functions Core Tools
-
-## 10. Deployment
-
-- [ ] 10.1 Provision Azure Function App (Python 3.11, Consumption Plan) and Azure Storage Account via Azure Portal or Azure CLI
-- [ ] 10.2 Set all required environment variables in Azure Function App settings
-- [ ] 10.3 Deploy code via Azure Functions Core Tools (`func azure functionapp publish`) or GitHub Actions workflow
-- [ ] 10.4 Trigger a manual invocation in Azure and verify digest email is received
-- [ ] 10.5 Enable the timer trigger and confirm first scheduled run succeeds
+- [x] 9.3 Verify local invocation works via Azure Functions Core Tools (`func start` + manual trigger)  ← manual step requiring Azure Functions Core Tools
