@@ -1,0 +1,30 @@
+name: Deploy to Azure Functions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt --target=".python_packages/lib/site-packages"
+
+      - name: Deploy to Azure Functions
+        uses: azure/functions-action@v2
+        with:
+          app-name: ${{ secrets.AZURE_FUNCTIONAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+          package: .
+          scm-do-build-during-deployment: false
+          enable-oryx-build: false

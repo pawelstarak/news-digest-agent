@@ -4,7 +4,9 @@
       "PowerShell(ls \"C:\\\\Users\\\\pawel\\\\Code\\\\news-digest-agent\\\\openspec\\\\\" -ErrorAction SilentlyContinue; if \\(-not \\(Test-Path \"C:\\\\Users\\\\pawel\\\\Code\\\\news-digest-agent\\\\openspec\\\\\"\\)\\) { \"No openspec dir\" })",
       "Bash(openspec instructions *)",
       "Bash(mkdir -p \"C:\\\\Users\\\\pawel\\\\Code\\\\news-digest-agent\\\\src\" \"C:\\\\Users\\\\pawel\\\\Code\\\\news-digest-agent\\\\templates\" \"C:\\\\Users\\\\pawel\\\\Code\\\\news-digest-agent\\\\tests\" \"C:\\\\Users\\\\pawel\\\\Code\\\\news-digest-agent\\\\failed_digests\" 2>&1; echo \"Done\")",
-      "PowerShell(if \\(!\\(Test-Path \"openspec/changes/archive\"\\)\\) { New-Item -ItemType Directory -Force \"openspec/changes/archive\" })"
+      "PowerShell(if \\(!\\(Test-Path \"openspec/changes/archive\"\\)\\) { New-Item -ItemType Directory -Force \"openspec/changes/archive\" })",
+      "Bash(openspec new *)",
+      "Bash(openspec status *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\pawel\\Code\\news-digest-agent"
